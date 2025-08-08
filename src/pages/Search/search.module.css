@@ -1,0 +1,102 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    z-index: 1001;
+}
+
+
+/* 主要内容区域:由于搜索框是fixed定位，所以内容区域需要有padding-top */
+.content {
+    padding-top: 95px;
+}
+
+
+
+/* 搜索建议样式 */
+.SearchSuggest {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    z-index: 1000;
+    padding-top: 95px; 
+    padding-bottom: 20px;
+    overflow-y: auto; 
+    backdrop-filter: blur(10px);
+}
+
+
+.SearchContent {
+    padding: 20px 0px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.Loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e3e3e3;
+    border-top: 4px solid #3b85ee;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.SearchSuggest_item {
+    display: flex;
+    padding: 18px 20px;
+    font-size: 30px;
+    color: #313131;
+    font-weight: 600;
+    background-color: #fff;
+    
+    cursor: pointer;
+    border-bottom: 1px solid #e8e8e8;
+    transition: all 0.3s ease;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */
+}
+.SearchSuggest_item .text {
+    flex: 1;
+    margin: 0 10px;
+}
+.SearchSuggest_item span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+
+
